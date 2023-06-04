@@ -1,7 +1,6 @@
 package com.example.Data;
 
 import java.time.LocalDate;
-import java.util.LinkedList;
 
 public class Pet extends Animal {
 
