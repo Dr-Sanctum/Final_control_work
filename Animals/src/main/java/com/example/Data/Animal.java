@@ -47,7 +47,8 @@ public abstract class Animal {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("Класс: ");
-        builder.append(type);
+        builder.append(classAnimal);
+        builder.append("\n");
         builder.append("Вид: ");
         builder.append(type);
         builder.append("\n");
