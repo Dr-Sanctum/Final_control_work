@@ -1,8 +1,5 @@
 package com.example;
 
-import java.util.concurrent.ThreadLocalRandom;
-
-import com.example.Data.Animal;
 import com.example.Data.ListAnimal;
 import com.example.Data.PackAnimals.Camel;
 import com.example.Data.PackAnimals.Donkey;
@@ -21,7 +18,7 @@ public class Presenter {
     }
 
     public void Run() {
-
+        try(Counter counter = new Counter(listAnimal.getSize())){
         int number;
         Boolean run = true;
         while (run) {
@@ -36,6 +33,7 @@ public class Presenter {
                             listAnimal.addAnimal(new Camel(viever.setName(),
                                     viever.setBirthday(),
                                     viever.setComand()));
+                                    counter.increment();
                             break;
 
                         // Добавить Осла
@@ -43,6 +41,7 @@ public class Presenter {
                             listAnimal.addAnimal(new Donkey(viever.setName(),
                                     viever.setBirthday(),
                                     viever.setComand()));
+                                    counter.increment();
                             break;
 
                         // Добавить Лошадь
@@ -50,6 +49,7 @@ public class Presenter {
                             listAnimal.addAnimal(new Horse(viever.setName(),
                                     viever.setBirthday(),
                                     viever.setComand()));
+                                    counter.increment();
                             break;
 
                         // Добавить Кошку
@@ -57,6 +57,7 @@ public class Presenter {
                             listAnimal.addAnimal(new Cat(viever.setName(),
                                     viever.setBirthday(),
                                     viever.setComand()));
+                                    counter.increment();
                             break;
 
                         // Добавить Собаку
@@ -64,6 +65,7 @@ public class Presenter {
                             listAnimal.addAnimal(new Dog(viever.setName(),
                                     viever.setBirthday(),
                                     viever.setComand()));
+                                    counter.increment();
                             break;
 
                         // Добавить Хомяка
@@ -71,6 +73,7 @@ public class Presenter {
                             listAnimal.addAnimal(new Hamster(viever.setName(),
                                     viever.setBirthday(),
                                     viever.setComand()));
+                                    counter.increment();
                             break;
 
                         // Выход
@@ -89,7 +92,7 @@ public class Presenter {
                 case 0:
                     run = false;
                     break;
-
+                }
             }
         }
     }
